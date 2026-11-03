@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIGAP Eco Quiz</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="background-glow glow-one"></div>
+  <div class="background-glow glow-two"></div>
+
+  <main class="app">
+    <header class="topbar">
+      <a class="brand" href="#" id="brandHome">
+        <span class="brand-icon">🌿</span>
+        <span><b>SIGAP</b><small>Siswa Gerak Aktif Peduli Lingkungan</small></span>
+      </a>
+      <div class="top-actions">
+        <span class="player-chip" id="playerChip">Pemain</span>
+      </div>
+    </header>
+
+    <section id="playerScreen" class="screen active">
+      <div class="welcome-layout">
+        <div class="welcome-copy">
+          <div class="eyebrow">🌎 ECO QUIZ CHALLENGE</div>
+          <h1>Jadilah <span>Pahlawan</span><br>Lingkungan!</h1>
+          <p>SIGAP merupakan game edukasi digital berbasis tebak gambar yang berfungsi sebagai media pembelajaran interaktif untuk meningkatkan kemampuan kognitif pemain. Game ini menggabungkan unsur visual, teka-teki, dan tantangan bertingkat untuk melatih konsentrasi, daya ingat, serta kemampuan memecahkan masalah. Dengan adanya tingkat kesulitan Easy, Medium, dan Hard, SIGAP memberikan pengalaman belajar yang menyenangkan, menarik, dan menantang bagi pemain.</p>
+        </div>
+        <div class="login-card">
+          <div class="card-leaf">🍃</div>
+          <h2>Siap bermain?</h2>
+          <p>Masukkan data pemain terlebih dahulu.</p>
+          <form id="playerForm">
+            <label for="playerName">Nama lengkap</label>
+            <input id="playerName" maxlength="60" required placeholder="Masukkan nama lengkap">
+            <label for="playerClass">Kelas</label>
+            <select id="playerClass" required>
+              <option value="">Pilih kelas</option>
+                <option>X RPL 1</option><option>X RPL 2</option>
+                <option>X TKR 1</option><option>X TKR 2</option>
+                <option>X DKV 1</option><option>X DKV 2</option>
+                <option>X TITL 1</option><option>X TITL 2</option>
+                <option>XI RPL 1</option><option>XI RPL 2</option>
+                <option>XI TKR 1</option><option>XI TKR 2</option>
+                <option>XI DKV 1</option><option>XI DKV 2</option>
+                <option>XI TITL 1</option><option>XI TITL 2</option>
+                <option>XII RPL 1</option><option>XII RPL 2</option>
+                <option>XII TKR 1</option><option>XII TKR 2</option>
+                <option>XII DKV 1</option><option>XII DKV 2</option>
+                <option>XII TITL 1</option><option>XII TITL 2</option>
+            </select>
+            <button class="primary-button full" type="submit">Masuk<span>→</span></button>
+          </form>
+          <div class="small-note">Belajar peduli lingkungan dengan cara menyenangkan 🌏</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="menuScreen" class="screen">
+      <div class="section-heading">
+        <div><div class="eyebrow">DASHBOARD PEMAIN</div><h1 id="helloTitle">Halo, SIGAP!</h1></div>
+        <div class="dashboard-actions"><div class="total-score"><small>Total skor</small><strong id="menuScore">0</strong><span>⭐ poin SIGAP</span></div><button class="change-player-button" id="changePlayerButton">👤 Ganti Pemain</button></div>
+      </div>
+      <div class="menu-grid">
+        <button class="menu-card play-card" data-open="play">
+          <span class="menu-icon">▶</span><span class="menu-tag">MULAI PETUALANGAN</span><h2>Main</h2><p>Lanjutkan misi quiz dan kumpulkan poin.</p><span class="card-arrow">→</span>
+        </button>
+        <button class="menu-card levels-card" data-open="levels">
+          <span class="menu-icon">🗺️</span><span class="menu-tag">50 TANTANGAN</span><h2>Level</h2><p>Buka level satu per satu dari mudah hingga sulit.</p><span class="card-arrow">→</span>
+        </button>
+        <button class="menu-card settings-card" data-open="settings">
+          <span class="menu-icon">⚙️</span><span class="menu-tag">SESUAIKAN GAME</span><h2>Pengaturan</h2><p>Atur efek suara, musik, dan bahasa.</p><span class="card-arrow">→</span>
+        </button>
+        <button class="menu-card score-card" data-open="scores">
+          <span class="menu-icon">🏆</span><span class="menu-tag">TOP PEMAIN</span><h2>Papan Skor</h2><p>Lihat peringkat pemain SIGAP.</p><span class="card-arrow">→</span>
+        </button>
+      </div>
+    </section>
+
+    <section id="levelsScreen" class="screen">
+      <div class="page-heading">
+        <button class="back-button" data-back>← Kembali</button>
+        <div><div class="eyebrow">PILIH TANTANGAN</div><h1>Level SIGAP</h1><p>Selesaikan level sebelumnya untuk membuka tantangan berikutnya.</p></div>
+      </div>
+      <div class="level-summary">
+        <span class="difficulty easy">● Mudah <small>1–15</small></span>
+        <span class="difficulty medium">● Sedang <small>16–30</small></span>
+        <span class="difficulty hard">● Sulit <small>31–50</small></span>
+        <span class="progress-label" id="levelProgress">0 / 50 selesai</span>
+      </div>
+      <div id="levelGrid" class="level-grid"></div>
+    </section>
+
+    <section id="settingsScreen" class="screen">
+      <div class="page-heading">
+        <button class="back-button" data-back>← Kembali</button>
+        <div><div class="eyebrow">PREFERENSI</div><h1>Pengaturan</h1><p>Atur pengalaman bermain SIGAP sesuai keinginanmu.</p></div>
+      </div>
+      <div class="settings-panel">
+        <div class="setting-row"><div class="setting-icon">🔔</div><div class="setting-info"><b>Efek Suara</b></div><label class="switch"><input type="checkbox" id="soundToggle"><span></span></label></div>
+        <div class="setting-row music-setting-row"><div class="setting-icon">🎵</div><div class="setting-info"><b>Musik</b></div><label class="switch"><input type="checkbox" id="settingsMusicToggle" checked><span></span></label></div>
+                <div class="setting-row"><div class="setting-icon">🌐</div><div class="setting-info"><b>Bahasa / Language</b><small>Pilih bahasa tampilan game.</small></div><div class="language-buttons"><button class="language-button active" data-lang="id">🇮🇩 Indonesia</button><button class="language-button" data-lang="en">🇬🇧 English</button></div></div>
+      </div>
+      </div>
+    </section>
+
+    <section id="scoresScreen" class="screen">
+      <div class="page-heading">
+        <button class="back-button" data-back>← Kembali</button>
+        <div><div class="eyebrow">HALL OF FAME</div><h1>Papan Skor 🏆</h1><p>Para pemain dengan skor SIGAP tertinggi.</p></div>
+      </div>
+      <div class="score-actions"><div class="score-count" id="scoreCount">0 pemain</div><button class="danger-button" id="resetScores">🗑 Hapus semua skor & mulai dari awal</button></div>
+      <div class="leaderboard-wrap">
+        <table class="leaderboard"><thead><tr><th>Rank</th><th>Pemain</th><th>Kelas</th><th>Level</th><th>Skor</th><th>Aksi</th></tr></thead><tbody id="scoreTable"></tbody></table>
+        <div id="emptyScores" class="empty-state">🌱 Belum ada skor. Jadilah pemain pertama!</div>
+      </div>
+    </section>
+
+    <section id="gameScreen" class="screen">
+      <div class="game-top">
+        <button class="back-button" id="exitGame">← Menu</button>
+        <button class="music-button" id="musicToggle" type="button" aria-pressed="true">🎵 Musik: ON</button>
+        <div class="game-level-name"><span id="gameDifficulty" class="difficulty easy">MUDAH</span><b id="gameLevelText">LEVEL 1 / 50</b></div>
+        <div class="game-score"><small>SKOR</small><b id="gameScore">0</b></div>
+      </div>
+      <div class="game-progress"><div id="gameProgressBar"></div></div>
+      <div class="timer-card"><div><small>WAKTU TERSISA</small><b id="timerText">40</b><small>DETIK</small></div><div class="timer-track"><div id="timerBar"></div></div></div>
+      <div class="question-card">
+        <div class="question-meta"><span id="questionNumber">PERTANYAAN 01</span><span id="pointsHint">BENAR = POIN</span></div>
+        <div class="question-emoji" id="questionEmoji">♻️</div>
+        <h2 id="questionText">Pertanyaan akan muncul di sini.</h2>
+        <div id="answerGrid" class="answer-grid"></div>
+        <div id="feedback" class="feedback" aria-live="polite"></div>
+      </div>
+      <div class="game-bottom"><span>🌿 SIGAP Eco Quiz</span><span id="gamePlayerName">Pemain</span></div>
+    </section>
+
+    <section id="resultScreen" class="screen">
+      <div class="result-card">
+        <div class="result-emoji" id="resultEmoji">🎉</div>
+        <div class="eyebrow">LEVEL SELESAI</div>
+        <h1 id="resultTitle">Hebat!</h1>
+        <p id="resultMessage">Kamu telah menyelesaikan tantangan.</p>
+        <div class="result-points"><small>POIN DIDAPAT</small><strong id="earnedPoints">+0</strong></div>
+        <div class="result-stats"><div><small>Skor total</small><b id="resultTotal">0</b></div><div><small>Level selesai</small><b id="resultLevel">1 / 50</b></div></div>
+        <button class="primary-button full" id="nextLevelButton">Level berikutnya →</button>
+        <button class="secondary-button full" id="resultMenuButton">Kembali ke menu</button>
+      </div>
+    </section>
+
+    <footer>© 2026 SIGAP • XI RPL 2 SMKN 1 SUMBERASIH</footer>
+  </main>
+  <div id="toast" class="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
